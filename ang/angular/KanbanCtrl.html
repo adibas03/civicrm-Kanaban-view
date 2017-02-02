@@ -1,0 +1,70 @@
+<div class="crm-container">
+
+  <div class="help" ng-show="unfetched">
+    <p>{{ts('Page is displaying demo data.Click.')}}<a ng-click="fetch()"> here </a> {{ts('to retreive real data')}}</a></p>
+  </div>
+
+  <div class="is-bordered double-borderd margin-bottom padded">
+    <div class="is-bordered double-bordered margin-left ui-corner-all" style="min-width:200px;width:70%">
+      <span class="ui-icon ui-icon-search inline-block-display margin-left" style="line-height: 24px;vertical-align:middle"></span>
+      <input placeholder="Search" class="no-border" style="width:90%">
+    </div>
+  </div>
+
+  <div class="clear-both margin-bottom" style="display:flex;flex-grow:1;flex-direction:row;">
+    <div class="col col-5" ng-repeat="sid in cases" ng-class="{'last-col':$last}" x-lvl-drop-target="true" x-on-drop="dropped(dragEl, dropEl)">
+
+      <div class="is-bordered double-borderd margin-bottom padded">
+        Case Status ID {{$index+1}}
+      </div>
+
+      <div class="is-bordered double-borderd case-column  margin-bottom" ng-if="unfetched">
+        <div class="card padded is-bordered single-borderd" ng-repeat="cid in sid track by $index" x-lvl-draggable="true" >
+          <img class="avatar" src="">
+            <div class="inline-block-display">Case ID: {{$index+1}}</div>
+            <div class="inline-block-display"> Surname Name</div>
+            <div class="inline-bloc-displayk">Owner: Owner Name</div>
+            <div> No. of activities: 5 </div>
+            <div> Case open due date: 02/02/2017 </div>
+          <span>
+            Some verly long ontent . Ipsum lorem dusim mosd olaeds svaivhe afaopaf avandvabn
+          </span>
+        </div>
+      </div>
+
+      <div class="is-bordered double-borderd case-column  margin-bottom" ng-if="!unfetched">
+        <div class="card padded is-bordered single-borderd" ng-repeat="cid in sid track by $index" x-lvl-draggable="true" >
+          <img class="avatar" src="">
+            <div class="inline-block-display min-50">Case ID:
+              <a href="{{idUrl(cid.id)}}">
+                {{cid.id}}</a></div>
+            <div class="inline-block-display min-50">
+              <a href="{{contactUrl(cid.contact_id[1])}}">{{ cid.contact_name }}
+            </a></div>
+            <div class="inline-block-display min-50">Owner:
+              <a href="{{contactUrl(cid.contact_id[1])}}" class=" inline-block-display min-50">{{ cid.owner_name}}
+            </a></div>
+            <div> No. of activities:
+              <a href="{{activitiesUrl(cid.id)}}" class=" inline-block-display min-50">
+                {{ cid.activity_count}}
+                 </a></div>
+          <div> Case open due date: {{cid.start_date}}</div>
+
+        </div>
+      </div>
+
+      <div class="is-bordered double-borderd padded">
+        No of Cases: <a href="{{casesUrl($parent.$index+1)}}"  tooltip="Total Expectation" tooltip-position="up">{{sid.length}}</a>
+      </div>
+
+    </div>
+    <p class="clear-both"></p>
+  </div>
+
+
+  <div crm-ui-debug="myContact" class="clear-left"></div>
+
+  <h1 crm-page-title>{{ts('CiviCase: Kanban view', {1: myContact.first_name + ' ' + myContact.last_name})}}</h1>
+
+
+</div>

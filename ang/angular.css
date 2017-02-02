@@ -1,0 +1,140 @@
+/* Add any CSS rules for Angular module "angular" */
+span{
+    display:inline;
+}
+.min-50 {
+    min-width: 50px;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+}
+.col-5{
+    width:19%;
+    margin-right:1.25%;
+}
+.last-col{
+    margin-right:0px;
+}
+.clear-both{
+    clear:both;
+}
+.clear-left {
+    clear: left;
+}
+.clear-right{
+    clear:right;
+}
+.is-bordered{
+    border: black 1px solid;
+}
+.single-borderd{
+    border-width:1px;
+}
+.double-borderd{
+    border-width:2px;
+}
+.no-border{
+    border:0px !important;
+}
+.borderd-solid{
+    border-style:solid;
+}
+.rounded-border{
+    border-radius: 40%;
+}
+.inline-display{
+    display: inline;
+}
+.inline-block-display{
+    display: inline-block;
+}
+
+.margin-bottom{
+    margin-bottom:8px;
+}
+.margin-left{
+    margin-left:8px;
+}
+
+.padded{
+    padding:8px;
+}
+.card.padded{
+    padding:3px;
+}
+.case-column{
+    flex-grow: 1;
+    min-height:400px;
+    font-size:0.7em;
+}
+.card{
+    margin:2px;
+    width:90%;
+}
+.card img.avatar{
+    width:40%;
+    min-height:40px;
+}
+.card p{
+    margin-bottom:2px;
+}
+
+/*tooltip css*/
+  .tooltip {
+      display: none;
+      position: fixed;
+      //position: absolute;
+      background-color: #222;
+      padding: 7px 10px;
+      max-width: 250px;
+      color: #fff;
+  }
+
+.tooltip-show {
+    display: inherit;
+}
+
+.tooltip-arrow {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.tooltip-down .tooltip-arrow {
+    top: -5px;
+    left: 50%;
+    margin-left: -5px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #222;
+}
+
+.tooltip-up .tooltip-arrow {
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #222;
+}
+
+.tooltip-right .tooltip-arrow {
+    left: -5px;
+    top: 50%;
+    margin-top: -3px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #222;
+}
+
+.tooltip-left .tooltip-arrow {
+    right: -5px;
+    top: 50%;
+    margin-top: -3px;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #222;
+}
+
+/* Drag and drop */
